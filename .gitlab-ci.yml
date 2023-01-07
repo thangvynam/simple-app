@@ -12,7 +12,7 @@ deploy:
     - chmod 700 ~/.ssh
   script:
     - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "git clone git@gitlab.com:thangvynam1808/simple-app.git || true"
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "cd demo-cicd && git pull"
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "cd demo-cicd && npm i"
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "cd demo-cicd && (npm start || true)"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "cd simple-app && git pull"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "cd simple-app && npm i"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "cd simple-app && (npm start || true)"
     - echo "Application successfully deployed."
